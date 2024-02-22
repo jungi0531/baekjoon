@@ -1,19 +1,24 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <math.h>
+#include <stdlib.h>
+
+#define M	1234567891
 
 int main(void) {
+	int i;
+	int L;
+	char input[51];
+	long long int answer = 0, R = 1;
 
-	int n, sum = 0;
-	char input;
+	scanf("%d", &L);
 
-	scanf("%d", &n);
+	scanf("%s", input);
 
-	for (int i = 0; i < n; i++) {
-		scanf(" %c", &input);
-		sum += (input - 'a' + 1) * pow(31, i);
+	for (i = 0; i < L; i++) {
+		answer = (answer + (input[i] - 'a' + 1) * R) % M;
+		R = (R * 31) % M;
 	}
-	printf("%d\n", sum);
+	printf("%lld\n", answer);
 
 	return 0;
 }
