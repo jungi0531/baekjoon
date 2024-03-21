@@ -1,113 +1,96 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
-
-typedef int Data;
+#include <string.h>
 
 typedef struct _node {
-	Data data;
+	int data;
 	struct _node* next;
 } Node;
 
 typedef struct _stack {
 	Node* head;
+	int numOfData;
 } Stack;
 
-void SInit(Stack* pstack);
-void SPush(Stack* pstack, Data data);
+void StackInit(Stack* pstack);
+int SIsEmpty(Stack* pstack);
+void SPush(Stack* pstack, int data);
 int SPop(Stack* pstack);
-int SSize(Stack* pstack);
-int SEmpty(Stack* pstack);
-int STop(Stack* pstack);
+int SPeek(Stack* pstack);
 
 int main(void) {
-	Stack stack;
-	int used[100001] = { 0 };
+	int i, j;
+	int n;				
 	int input;
-	char answer[500001];
-	int n, i, j;
 	int count = 0;
-	int no = 0;
-	SInit(&stack);
-	// 수 입력
+	int check = 0;		// 1이면 불가능으로 NO 출력
+	int used[100001] = { 0 };
+	char ans[500000];	// 출력 값 저장
+	Stack stack;
+
+	StackInit(&stack);
+
 	scanf("%d", &n);
+
 	for (i = 0; i < n; i++) {
 		scanf("%d", &input);
-		if (input == STop(&stack)) {
+		if (input == SPeek(&stack)) {
 			used[SPop(&stack)]++;
-			answer[count++] = '-';
+			ans[count++] = '-';
 		}
-		else if (input > STop(&stack)) {
-			for (j = STop(&stack) + 1; j <= input; j++) {
+		else if (input > SPeek(&stack)) {
+			for (j = SPeek(&stack) + 1; j <= input; j++) {
 				if (used[j] == 0) {
 					SPush(&stack, j);
-					answer[count++] = '+';
+					ans[count++] = '+';
 				}
 			}
 			used[SPop(&stack)]++;
-			answer[count++] = '-';
+			ans[count++] = '-';
 		}
-		else {
-			no++;
-		}
+		else check++;
 	}
-	if (no) {
-		printf("NO\n");
-	}
+
+	if (check) printf("NO\n");
 	else {
 		for (i = 0; i < count; i++) {
-			printf("%c\n", answer[i]);
+			printf("%c\n", ans[i]);
 		}
 	}
-	
+
 	return 0;
 }
 
-void SInit(Stack* pstack) {	
+void StackInit(Stack* pstack) {
 	pstack->head = NULL;
+	pstack->numOfData = 0;
 }
-
-void SPush(Stack* pstack, Data data) {	
-	Node* newNode = (Node*)malloc(sizeof(Node));
-	newNode->data = data;
-
-	newNode->next = pstack->head;
-	pstack->head = newNode;
-}
-
-int SPop(Stack* pstack) {	
-	Node* rpos;
-	Data rdata;
-
-	if (SEmpty(pstack)) {
-		return -1;
-	}
-
-	rpos = pstack->head;
-	rdata = pstack->head->data;
-	pstack->head = pstack->head->next;
-
-	free(rpos);
-	return rdata;
-}
-
-int SSize(Stack* pstack) {	
-	int count = 0;
-	Node* cur = pstack->head;
-	while (cur != NULL) {
-		cur = cur->next;
-		count++;
-	}
-	return count;
-}
-
-int SEmpty(Stack* pstack) {
+int SIsEmpty(Stack* pstack) {
 	if (pstack->head == NULL) return 1;
 	else return 0;
 }
-
-int STop(Stack* pstack) {
-	if (SEmpty(pstack)) return 0;
-	else return pstack->head->data;
+void SPush(Stack* pstack, int data) {
+	Node* newNode = (Node*)malloc(sizeof(Node));
+	newNode->data = data;
+	newNode->next = pstack->head;
+	pstack->head = newNode;
+}
+int SPop(Stack* pstack) {
+	Node* rNode;
+	int rdata;
+	if (SIsEmpty(pstack)) {
+		return -1;
+	}
+	rNode = pstack->head;
+	rdata = rNode->data;
+	pstack->head = pstack->head->next;
+	free(rNode);
+	return rdata;
+}
+int SPeek(Stack* pstack) {
+	if (SIsEmpty(pstack)) {
+		return 0;
+	}
+	return pstack->head->data;
 }
