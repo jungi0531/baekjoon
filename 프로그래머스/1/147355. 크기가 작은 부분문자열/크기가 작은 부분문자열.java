@@ -4,11 +4,7 @@ class Solution {
         String temp;
     
         for (int i = 0; i <= t.length() - p.length(); i++) {
-            temp = "";
-            for (int j = i; j < i + p.length(); j++) {
-                temp += t.charAt(j);
-            }
-            // System.out.println(temp);
+            temp = t.substring(i, i + p.length());
             if (Long.valueOf(temp) <= Long.valueOf(p)) answer++;
         }
         
