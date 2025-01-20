@@ -1,29 +1,32 @@
-import java.util.Scanner;
+import java.io.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        boolean result = false;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        String input;
-        String[] fruit = {"STRAWBERRY", "BANANA", "LIME", "PLUM"};
-        int[] count = {0, 0, 0, 0};
+        String answer = "NO";
+        int T = Integer.parseInt(br.readLine());
+        int[] fruit = {0, 0, 0, 0};
 
-        int n = scanner.nextInt();
+        for (int i = 0; i < T; i++) {
+            String[] input = br.readLine().split(" ");
 
-        for (int i = 0; i < n; i++) {
-            input = scanner.next();
-            for (int j = 0; j < fruit.length; j++) {
-                if (input.equals(fruit[j])) count[j] += scanner.nextInt();
+            if (input[0].equals("STRAWBERRY")) {
+                fruit[0] += Integer.parseInt(input[1]);
+            }
+            else if (input[0].equals("BANANA")) {
+                fruit[1] += Integer.parseInt(input[1]);
+            }
+            else if (input[0].equals("LIME")) {
+                fruit[2] += Integer.parseInt(input[1]);
+            }
+            else if (input[0].equals("PLUM")) {
+                fruit[3] += Integer.parseInt(input[1]);
             }
         }
-
-        for (int i = 0; i < fruit.length; i++) {
-            if (count[i] == 5) result = true;
+        for (int i = 0; i < 4; i++) {
+            if (fruit[i] == 5) answer = "YES";
         }
-        if (result) System.out.println("YES");
-        else System.out.println("NO");
-
-        scanner.close();
+        System.out.println(answer);
     }
 }
