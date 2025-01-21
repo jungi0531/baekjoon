@@ -7,13 +7,13 @@ public class Main {
         br.readLine();
         String input = br.readLine();
 
-        Integer answer = 0;
+        long answer = 0;
+        long r = 1;
 
         for (int i = 0; i < input.length(); i++){
-            int temp = input.charAt(i) - 'a' + 1;
-            answer += temp * (int)Math.pow(31, i);
+            answer = (answer + (input.charAt(i) - 'a' + 1) * r) % 1234567891;
+            r = (r * 31) % 1234567891;
         }
-
         System.out.println(answer);
     }
 }
