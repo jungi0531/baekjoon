@@ -1,37 +1,29 @@
-import java.util.Scanner;
+import java.io.*;
 import java.util.HashMap;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         HashMap<String, String> hash = new HashMap<>();
+        String[] num = br.readLine().split(" ");
 
-        int N = scanner.nextInt();
-        int M = scanner.nextInt();
-
-        for (int i = 0; i < N; i++) {
-            scanner.nextInt();
-            String name = scanner.next();
-            String rhythm = "";
-            for (int j = 0; j < 3; j++) {
-                String temp = scanner.next();
-                rhythm += temp;
+        for (int i = 0; i < Integer.parseInt(num[0]); i++) {
+            String[] input = br.readLine().split(" ");
+            String temp = "";
+            for (int ii = 0; ii < 3; ii++) {
+                temp += input[2 + ii];
             }
-            for (int j = 0; j < 4; j++) {
-                scanner.next();
-            }
-            if (hash.containsKey(rhythm)) {
-                hash.put(rhythm, "");
-            }
-            else {
-                hash.put(rhythm, name);
-            }
+            if (hash.containsKey(temp))
+                hash.put(temp, "");
+            else
+                hash.put(temp, input[1]);
         }
 
-        for (int i = 0; i < M; i++) {
+        for (int i = 0; i < Integer.parseInt(num[1]); i++) {
+            String[] input = br.readLine().split(" ");
             String temp = "";
-            for (int j = 0; j < 3; j++) {
-                temp += scanner.next();
+            for (int ii = 0; ii < input.length; ii++) {
+                temp += input[ii];
             }
             if (!hash.containsKey(temp))
                 System.out.println("!");
@@ -40,7 +32,5 @@ public class Main {
             else
                 System.out.println(hash.get(temp));
         }
-
-        scanner.close();
     }
 }
