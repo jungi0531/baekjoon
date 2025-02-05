@@ -1,56 +1,55 @@
+import java.io.*;
+import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Scanner;
 import java.util.Queue;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Queue<Integer> queue = new LinkedList<>();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        Deque<Integer> q = new LinkedList<>();
 
-        int N = scanner.nextInt();
+        int N = Integer.parseInt(br.readLine());
 
-        for (int i = 0; i < N; i++) {
-            String input = scanner.next();
-            if (input.equals("push")) {
-                queue.add(scanner.nextInt());
+        for (int i = 0; i < N; i++)
+        {
+            String[] input = br.readLine().split(" ");
+            if (input[0].equals("push"))
+            {
+                q.add(Integer.parseInt(input[1]));
             }
-            else if (input.equals("pop")) {
-                if (queue.isEmpty()) {
-                    System.out.println(-1);
-                }
-                else {
-                    System.out.println(queue.poll());
-                }
+            else if (input[0].equals("pop"))
+            {
+                if (q.isEmpty())
+                    System.out.println("-1");
+                else
+                    System.out.println(q.poll());
             }
-            else if (input.equals("size")) {
-                System.out.println(queue.size());
+            else if (input[0].equals("size"))
+            {
+                System.out.println(q.size());
             }
-            else if (input.equals("empty")) {
-                if (queue.isEmpty()) {
-                    System.out.println(1);
-                }
-                else {
-                    System.out.println(0);
-                }
+            else if (input[0].equals("empty"))
+            {
+                if (q.isEmpty())
+                    System.out.println("1");
+                else
+                    System.out.println("0");
             }
-            else if (input.equals("front")) {
-                if (queue.isEmpty()) {
-                    System.out.println(-1);
-                }
-                else {
-                    System.out.println(queue.peek());
-                }
+            else if (input[0].equals("front"))
+            {
+                if (q.isEmpty())
+                    System.out.println("-1");
+                else
+                    System.out.println(q.peekFirst());
             }
-            else if (input.equals("back")) {
-                if (queue.isEmpty()) {
-                    System.out.println(-1);
-                }
-                else {
-                    System.out.println(((LinkedList<Integer>) queue).getLast());
-                }
+            else if (input[0].equals("back"))
+            {
+                if (q.isEmpty())
+                    System.out.println("-1");
+                else
+                    System.out.println(q.peekLast());
             }
         }
 
-        scanner.close();
     }
 }
