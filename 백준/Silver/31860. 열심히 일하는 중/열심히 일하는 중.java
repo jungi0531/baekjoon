@@ -35,6 +35,14 @@ public class Main {
             for (int i : list) {
                 bw.write(i + "\n");
             }
+            // 아래 반복문으로 출력하니 시간 초과가 발생 remove 메소드를 사용하는 과정에서 O(n)만큼 시간 복잡도
+            // ArrayList로 구현했기에 맨 앞 요소를 제거하면 다른 모든 요소를 한 칸씩 땡겨야하기 때문.
+            // 즉 반복문에서 O(n^2)만큼의 시간 복잡도가 발생했었음.
+            // LinkedList를 사용하거나 for each문으로 시간 복잡도 줄이기
+            // 따라서 위 for each문을 사용해 그냥 출력하도록 변경
+//            for (int i = 0; i < count; i++) {
+//                bw.write(list.remove(0) + "\n");
+//            }
             bw.flush();
             bw.close();
             br.close();
