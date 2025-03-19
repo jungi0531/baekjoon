@@ -24,12 +24,12 @@ public class Main {
                 count++;
             }
         }
-        // for each문으로 pq(문자열 정렬됨)를 돌면서 출력
         bw.write(String.valueOf(count) + "\n");
-        //이렇게 사용하면 정렬이 안 된대
+        //이렇게 사용하면 정렬 보장 X
 //        for (String temp : pq) {
 //            bw.write(temp + "\n");
 //        }
+        // poll()을 사용해서 pq가 빌 때까지 반복
         while (!pq.isEmpty())
             bw.write(pq.poll() + "\n");
         bw.flush();
