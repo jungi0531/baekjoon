@@ -22,22 +22,26 @@ public class Main {
             list[n1].add(n2);
             list[n2].add(n1);
         }
-        // ArrayList 배열을 만들고 각 번호에 연결되어 있는 번호 붙이고 1번부터 BFS 적용?
+        // ArrayList 배열을 만들고 각 번호(컴퓨터)에 연결되어 있는 번호(컴퓨터) 붙이고 1번부터 BFS 적용
         ArrayList<Integer> cur = new ArrayList<>();
         cur.add(1); // 1부터 시작
+        // 더이상 cur에 아무것도 담기지 않을 때까지 -> 더이상 전파될 컴퓨터가 없을 때까지
         while (!cur.isEmpty()) {
+            // cur의 첫 숫자를 꺼내서
             int temp = cur.remove(0);
-            // 방문하지 않은 노드라면 방문했음으로 바꾸고 count++
+            // 방문하지 않은 노드라면 방문 했음으로 바꾸고 count++
+            // 방문 했으면 아무것도 하지 않고 그냥 remove 하는 겁니당
             if (visited[temp] == false) {
                 count++;
                 visited[temp] = true;
             }
-            // 해당 인덱스의 값들을 cur에 모두 저장 -> 해당 인덱스와 쌍을 이루는 컴퓨터들 cur에 저장
+            // 해당 숫자와 연결된 값들을 cur에 모두 저장 -> 해당 인덱스와 쌍을 이루는 컴퓨터들 cur에 저장(BFS)
             while (!list[temp].isEmpty()) {
                 cur.add(list[temp].remove(0));
             }
         }
         // 출력 후 버퍼 닫기
+        // 1 제외해야하기에 -1
         bw.write(String.valueOf(count - 1) + "\n");
         bw.flush();
         bw.close();
