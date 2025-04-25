@@ -23,7 +23,8 @@ public class Main {
         long mid = 0;
         while (start <= max) {
             mid = (start + max) / 2;
-            // mid 높이에서 나무 잘라보고 M보다 부족하면 높이 내리고 너무 넘치면 좀 올리고
+            // mid 높이에서 나무 잘라보고 M보다 부족하면 높이 아래로 많으면 높이 위로
+            // 현재 합과 M이 같아도 더 위로 잘라도 같은 길이일 수 있으니 높이 위로
             long cur = cutting(tree, mid);
             // System.out.println("cur: " + cur + " M: " + M + " mid: " + mid);
             if (cur < M)
@@ -31,7 +32,7 @@ public class Main {
             else
                 start = mid + 1;
         }
-        // 정답 출력
+        // 최대 높이 max 값 출력
         bw.write(String.valueOf(max) + "\n");
         bw.flush();
         bw.close();
