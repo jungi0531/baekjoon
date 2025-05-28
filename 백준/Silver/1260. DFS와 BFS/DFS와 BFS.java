@@ -1,70 +1,84 @@
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class Main {
-    static int[][] array;
-    static int[] visited;
-    static int N, M, V;
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    static ArrayList<Integer>[] list;
+    static String[] num;
+    static String[] input;
+    static int N;
+    static int M;
+    static int V;
+    static int node1;
+    static int node2;
+    static boolean[] visited;
+    static StringBuilder result = new StringBuilder();
 
-        N = scanner.nextInt();
-        M = scanner.nextInt();
-        V = scanner.nextInt();
+    public static void main(String[] args) throws IOException {
+        initGraph();
+        dfs(V);
+        Arrays.fill(visited, false);
+        result.append("\n");
+        bfs(V);
+        printResult();
+    }
+    public static void initGraph() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        // 배열 선언 및 초기화
-        array = new int[N ][N];
-        visited = new int[N ];
-        for (int i = 0; i < N; i++) {
-            visited[i] = 0;
-            for (int j = 0; j < N; j++) {
-                array[i][j] = 0;
-            }
+        num = br.readLine().split(" ");
+        N = Integer.parseInt(num[0]);
+        M = Integer.parseInt(num[1]);
+        V = Integer.parseInt(num[2]);
+        list = new ArrayList[N + 1];
+        for (int i = 0; i <= N; i++) {
+            list[i] = new ArrayList<>();
         }
+        visited = new boolean[N + 1];
         for (int i = 0; i < M; i++) {
-            int a = scanner.nextInt();
-            int b = scanner.nextInt();
-            array[a - 1][b - 1] = 1;
-            array[b - 1][a - 1] = 1;
+            String[] input = br.readLine().split(" ");
+            int node1 = Integer.parseInt(input[0]);
+            int node2 = Integer.parseInt(input[1]);
+            list[node1].add(node2);
+            list[node2].add(node1);
         }
-
-        // 탐색 실행
-        dfs(V - 1);
-        for (int i  = 0; i < N; i++) {
-            visited[i] = 0;
+        for (int i = 0; i <= N; i++) {
+            list[i].sort(null);
         }
-        System.out.println();
-        bfs(V - 1);
-
-        scanner.close();
+        br.close();
     }
-    public static void dfs(int index) {
-        if (visited[index] == 1) {
+    public static void dfs(int cur) {
+        if (visited[cur])
             return;
+        visited[cur] = true;
+        result.append(cur).append(" ");
+        for (int i = 0; i < list[cur].size(); i++) {
+            dfs(list[cur].get(i));
         }
-        visited[index] = 1;
-        System.out.print((index + 1) + " ");
-        for (int i = 0; i < N; i++) {
-            if (array[index][i] == 1) {
-                dfs(i);
-            }
-        }
+//        while (!list[cur].isEmpty()) {
+//            dfs(list[cur].removeFirst());
+//        }
     }
-    public static void bfs(int index) {
+    public static void bfs(int cur) {
         Queue<Integer> q = new LinkedList<>();
-        q.add(index);
-        visited[index] = 1;
-        System.out.print((index + 1) + " ");
+
+        q.add(cur);
+        visited[cur] = true;
+        result.append(cur).append(" ");
         while (!q.isEmpty()) {
-            int temp = q.poll();
-            for (int i = 0; i < N; i++) {
-                if (array[temp][i] == 1 && visited[i] == 0) {
-                    q.add(i);
-                    visited[i] = 1;
-                    System.out.print((i + 1) + " ");
+            int remove = q.poll();
+            for (int i = 0; i < list[remove].size(); i++) {
+                int curIndex = list[remove].get(i);
+                if (!visited[curIndex]) {
+                    visited[curIndex] = true;
+                    q.add(curIndex);
+                    result.append(curIndex).append(" ");
                 }
             }
         }
+    }
+    public static void printResult() throws IOException {
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        bw.write(result.toString() + "\n");
+        bw.flush();
+        bw.close();
     }
 }
