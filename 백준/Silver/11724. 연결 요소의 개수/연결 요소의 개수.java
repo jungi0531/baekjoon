@@ -1,54 +1,46 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class Main {
-    static int N, M, count;
-    static int[][] array;
-    static int[] visited;
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        count = 0;
-        N = scanner.nextInt();  // 정점의 개수
-        M = scanner.nextInt();  // 간선의 개수
-
-        array = new int[N][N];
-        visited = new int[N];
-        for (int i = 0; i < N; i++) {
-            visited[i] = 0;
-            for (int j = 0; j < N; j++) {
-                array[i][j] = 0;
-            }
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        String[] num = br.readLine().split(" ");
+        int N = Integer.parseInt(num[0]);
+        int M = Integer.parseInt(num[1]);
+        boolean[] visited = new boolean[N + 1];
+        ArrayList<Integer>[] list = new ArrayList[N + 1];
+        for (int i = 0; i <= N; i++) {
+            list[i] = new ArrayList<>();
         }
-
-        // M번 만큼 간선의 양 끝 점 입력 받기
         for (int i = 0; i < M; i++) {
-            int u = scanner.nextInt();
-            int v = scanner.nextInt();
-            array[u - 1][v - 1] = 1;
-            array[v - 1][u - 1] = 1;
+            String[] edges = br.readLine().split(" ");
+            int u = Integer.parseInt(edges[0]);
+            int v = Integer.parseInt(edges[1]);
+            list[u].add(v);
+            list[v].add(u);
         }
-
-        for (int i = 0; i < N; i++) {
-            if (visited[i] == 0) {
-                dfs(i);
+        // 이제 탐색하기
+        Queue<Integer> q = new LinkedList<>();
+        int count = 0;
+        for (int i = 1; i <= N; i++) {
+            if (!visited[i]) {
+                q.add(i);
                 count++;
-            }
-        }
-
-        System.out.println(count);
-
-        scanner.close();
-    }
-    public static void dfs(int index) {
-        if (visited[index] == 1) {
-            return;
-        }
-        else {
-            visited[index] = 1;
-            for (int i = 0; i < N; i++) {
-                if (array[index][i] == 1) {
-                    dfs(i);
+                while (!q.isEmpty()) {
+                    int remove = q.poll();
+                    for (int temp : list[remove]) {
+                        if (!visited[temp]) {
+                            visited[temp] = true;
+                            q.add(temp);
+                        }
+                    }
                 }
             }
         }
+        bw.write(String.valueOf(count));
+        br.close();
+        bw.flush();
+        bw.close();
     }
 }
