@@ -5,21 +5,30 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        long[] array = new long[101];
-        array[1] = 1;
-        array[2] = 1;
-        array[3] = 1;
-        array[4] = 2;
-        array[5] = 2;
-        for (int i = 6; i <= 100; i++) {
-            array[i] = array[i - 1] + array[i - 5];
-        }
+        // 입력
         int T = Integer.parseInt(br.readLine());
+        int[] input = new int[T];
+        int max = 0;
         for (int i = 0; i < T; i++) {
-            int N = Integer.parseInt(br.readLine());
-            // n = (n-1 + n-5)?
-            // 1 1 1 2 2 3 4 5 7 9 12
-            bw.write(String.valueOf(array[N] + "\n"));
+            input[i] = Integer.parseInt(br.readLine());
+            if (input[i] > max)
+                max = input[i];
+        }
+
+        //
+        long[] dp = new long[max + 5];
+        dp[1] = 1;
+        dp[2] = 1;
+        dp[3] = 1;
+        dp[4] = 2;
+        dp[5] = 2;
+        for (int i = 6; i <= max; i++) {
+            dp[i] = dp[i - 1] + dp[i - 5];
+        }
+
+        // 출력
+        for (int i = 0; i < T; i++) {
+            bw.write(String.valueOf(dp[input[i]]) + "\n");
         }
         bw.flush();
         bw.close();
