@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-
+        int MOD = 1_000_000_000;
+        
         // 입력
         int N = sc.nextInt();
         int K = sc.nextInt();
@@ -23,7 +24,7 @@ public class Main {
         for (int i = 1 ; i <= N; i++) {
             for (int ii = 1; ii <= K; ii++) {
                 dp[i][ii] = dp[i - 1][ii] + dp[i][ii - 1];
-                dp[i][ii] %= 1_000_000_000;
+                dp[i][ii] %= MOD;
             }
         }
 
