@@ -1,15 +1,14 @@
 import java.io.*;
-import java.util.Arrays;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int MOD = 1_000_000_000;
-        
+
         // 입력
-        int N = sc.nextInt();
-        int K = sc.nextInt();
+        String[] input = br.readLine().split(" ");
+        int N = Integer.parseInt(input[0]);
+        int K = Integer.parseInt(input[1]);
 
         // 초기화
         int[][] dp = new int[N + 1][K + 1];
