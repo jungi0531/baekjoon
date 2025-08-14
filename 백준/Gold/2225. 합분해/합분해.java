@@ -17,16 +17,13 @@ public class Main {
         }
         for (int i = 1; i <= K; i++) {
             dp[0][i] = 1;
-            dp[1][i] = i;
         }
 
         //
-        for (int i = 2 ; i <= N; i++) {
+        for (int i = 1 ; i <= N; i++) {
             for (int ii = 1; ii <= K; ii++) {
-                for (int iii = 0; iii <= i; iii++) {
-                    dp[i][ii] += dp[iii][ii - 1];
-                    dp[i][ii] %= 1_000_000_000;
-                }
+                dp[i][ii] = dp[i - 1][ii] + dp[i][ii - 1];
+                dp[i][ii] %= 1_000_000_000;
             }
         }
 
