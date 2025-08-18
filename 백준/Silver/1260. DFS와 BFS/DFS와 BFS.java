@@ -2,83 +2,70 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    static ArrayList<Integer>[] list;
-    static String[] num;
-    static String[] input;
-    static int N;
-    static int M;
-    static int V;
-    static int node1;
-    static int node2;
     static boolean[] visited;
-    static StringBuilder result = new StringBuilder();
+    static ArrayList<Integer>[] vertex;
+    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
     public static void main(String[] args) throws IOException {
-        initGraph();
-        dfs(V);
-        Arrays.fill(visited, false);
-        result.append("\n");
-        bfs(V);
-        printResult();
-    }
-    public static void initGraph() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        num = br.readLine().split(" ");
-        N = Integer.parseInt(num[0]);
-        M = Integer.parseInt(num[1]);
-        V = Integer.parseInt(num[2]);
-        list = new ArrayList[N + 1];
-        for (int i = 0; i <= N; i++) {
-            list[i] = new ArrayList<>();
-        }
+        // 입력
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+        int V = Integer.parseInt(st.nextToken());
         visited = new boolean[N + 1];
+        vertex = new ArrayList[N + 1];
+        for (int i = 0; i <= N; i++) {
+            vertex[i] = new ArrayList<>();
+        }
         for (int i = 0; i < M; i++) {
-            String[] input = br.readLine().split(" ");
-            int node1 = Integer.parseInt(input[0]);
-            int node2 = Integer.parseInt(input[1]);
-            list[node1].add(node2);
-            list[node2].add(node1);
+            st = new StringTokenizer(br.readLine());
+            int v1 = Integer.parseInt(st.nextToken());
+            int v2 = Integer.parseInt(st.nextToken());
+            vertex[v1].add(v2);
+            vertex[v2].add(v1);
         }
         for (int i = 0; i <= N; i++) {
-            list[i].sort(null);
+            vertex[i].sort(null);
         }
+
+        // 탐색
+        dfs(V);
+        bw.write("\n");
+        Arrays.fill(visited, false);
+        bfs(V);
+        bw.write("\n");
+
+        bw.flush();
+        bw.close();
         br.close();
     }
-    public static void dfs(int cur) {
-        if (visited[cur])
+    public static void dfs(int start) throws IOException {
+        if (visited[start])
             return;
-        visited[cur] = true;
-        result.append(cur).append(" ");
-        for (int i = 0; i < list[cur].size(); i++) {
-            dfs(list[cur].get(i));
+        bw.write(String.valueOf(start) + " ");
+        visited[start] = true;
+        for (int i = 0; i < vertex[start].size(); i++) {
+            dfs(vertex[start].get(i));
         }
-//        while (!list[cur].isEmpty()) {
-//            dfs(list[cur].removeFirst());
-//        }
     }
-    public static void bfs(int cur) {
+    public static void bfs(int start) throws IOException {
         Queue<Integer> q = new LinkedList<>();
 
-        q.add(cur);
-        visited[cur] = true;
-        result.append(cur).append(" ");
+        q.add(start);
+        visited[start] = true;
+        bw.write(String.valueOf(start) + " ");
         while (!q.isEmpty()) {
             int remove = q.poll();
-            for (int i = 0; i < list[remove].size(); i++) {
-                int curIndex = list[remove].get(i);
-                if (!visited[curIndex]) {
-                    visited[curIndex] = true;
-                    q.add(curIndex);
-                    result.append(curIndex).append(" ");
+            for (int i = 0; i < vertex[remove].size(); i++) {
+                int temp = vertex[remove].get(i);
+                if (!visited[temp]) {
+                    q.add(temp);
+                    bw.write(String.valueOf(temp) + " ");
+                    visited[temp] = true;
                 }
             }
         }
-    }
-    public static void printResult() throws IOException {
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        bw.write(result.toString() + "\n");
-        bw.flush();
-        bw.close();
     }
 }
