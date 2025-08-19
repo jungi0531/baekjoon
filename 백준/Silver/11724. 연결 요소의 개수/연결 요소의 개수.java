@@ -2,45 +2,49 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
+    static List<Integer>[] list;
+    static boolean[] visited;
+    static int count;
+    static boolean connected;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        String[] num = br.readLine().split(" ");
-        int N = Integer.parseInt(num[0]);
-        int M = Integer.parseInt(num[1]);
-        boolean[] visited = new boolean[N + 1];
-        ArrayList<Integer>[] list = new ArrayList[N + 1];
+
+        // 입력
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+        visited = new boolean[N + 1];
+        list = new ArrayList[N + 1];
         for (int i = 0; i <= N; i++) {
             list[i] = new ArrayList<>();
         }
         for (int i = 0; i < M; i++) {
-            String[] edges = br.readLine().split(" ");
-            int u = Integer.parseInt(edges[0]);
-            int v = Integer.parseInt(edges[1]);
-            list[u].add(v);
-            list[v].add(u);
+            st = new StringTokenizer(br.readLine());
+            int v1 = Integer.parseInt(st.nextToken());
+            int v2 = Integer.parseInt(st.nextToken());
+            list[v1].add(v2);
+            list[v2].add(v1);
         }
-        // 이제 탐색하기
-        Queue<Integer> q = new LinkedList<>();
-        int count = 0;
+        //
         for (int i = 1; i <= N; i++) {
-            if (!visited[i]) {
-                q.add(i);
-                count++;
-                while (!q.isEmpty()) {
-                    int remove = q.poll();
-                    for (int temp : list[remove]) {
-                        if (!visited[temp]) {
-                            visited[temp] = true;
-                            q.add(temp);
-                        }
-                    }
-                }
-            }
+            connected = false;
+            dfs(i);
         }
-        bw.write(String.valueOf(count));
-        br.close();
-        bw.flush();
-        bw.close();
+
+        // 출력
+        System.out.println(count);
+    }
+    public static void dfs(int start) {
+        if (visited[start])
+            return;
+        visited[start] = true;
+        if (!connected) {
+            count++;
+            connected = true;
+        }
+        for (int i = 0; i < list[start].size(); i++) {
+            dfs(list[start].get(i));
+        }
     }
 }
