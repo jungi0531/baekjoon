@@ -10,7 +10,7 @@ public class Main {
         int N = Integer.parseInt(br.readLine());
         //
         arr = new int[N][N];
-        div(0, N, 0, N);
+        div(0, 0, N);
 
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < N; i++) {
@@ -23,28 +23,17 @@ public class Main {
         // 출력
         System.out.println(sb);
     }
-    public static void div(int startX, int endX, int startY, int endY) {
-        int size = (endX - startX) / 3;
+    public static void div(int x, int y, int size) {
         if (size <= 1) {
-            for (int i = startX; i < endX; i++) {
-                for (int ii = startY; ii < endY; ii++) {
-                    if (!(i == startX + size && ii == startY + size))
-                        arr[i][ii] = 1;
-                }
-            }
+            arr[x][y] = 1;
             return;
         }
-
-        div(startX, startX + size, startY, startY + size);
-        div(startX + size, startX + 2 * size, startY, startY + size);
-        div(startX + 2 * size, endX, startY, startY + size);
-
-        div(startX, startX + size, startY + size, startY + 2 * size);
-        // 중앙 비우기
-        div(startX + 2 * size, endX, startY + size, startY + 2 * size);
-
-        div(startX, startX + size, startY + 2 * size, endY);
-        div(startX + size, startX + 2 * size, startY + 2 * size, endY);
-        div(startX + 2 * size, endX, startY + 2 * size, endY);
+        size /= 3;
+        for (int i = 0; i < 3; i++) {
+            for (int ii = 0; ii < 3; ii++) {
+                if (i == 1 && ii == 1) continue;
+                div(x + i * size, y + ii * size, size);
+            }
+        }
     }
 }
