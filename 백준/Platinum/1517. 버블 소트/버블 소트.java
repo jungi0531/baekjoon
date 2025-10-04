@@ -2,9 +2,9 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    static long count = 0;
     static int[] arr;
     static int[] sorted;
+    static long count = 0;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -36,8 +36,9 @@ public class Main {
         int index = start;
 
         while (i <= mid && j <= end) {
-            if (arr[i] <= arr[j])
+            if (arr[i] <= arr[j]) {
                 sorted[index++] = arr[i++];
+            }
             else {
                 sorted[index++] = arr[j++];
                 count += mid - i + 1;
