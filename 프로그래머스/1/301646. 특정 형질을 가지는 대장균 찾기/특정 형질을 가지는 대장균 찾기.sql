@@ -1,0 +1,1 @@
+select sum(if((GENOTYPE & 2 = 0) and (GENOTYPE & 5 != 0), 1, 0)) as COUNT from ECOLI_DATA
