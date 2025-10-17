@@ -10,5 +10,5 @@ select
         else null
     end as STATUS
 from USED_GOODS_BOARD
-where CREATED_DATE like '2022-10-05%'
+where date_format(CREATED_DATE, '%Y-%m-%d') = '2022-10-05'
 order by BOARD_ID desc
