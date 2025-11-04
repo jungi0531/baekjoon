@@ -27,7 +27,7 @@ public class Main {
     }
     public static void dfs(int count) {
         if (count == N) {
-            result = Math.max(result, getSum());
+            result = Math.max(result, getResult());
         }
 
         for (int i = 0; i < N; i++) {
@@ -39,7 +39,7 @@ public class Main {
             }
         }
     }
-    public static int getSum() {
+    public static int getResult() {
         int sum = 0;
 
         for (int i = 0; i < N - 1; i++) {
