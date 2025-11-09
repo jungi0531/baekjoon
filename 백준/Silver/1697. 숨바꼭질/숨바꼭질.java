@@ -1,50 +1,42 @@
 import java.io.*;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class Main {
     static int N;
     static int K;
     static int[] arr;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        String[] input = br.readLine().split(" ");
-        N = Integer.parseInt(input[0]);
-        K = Integer.parseInt(input[1]);
-        arr = new int[100001];
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(st.nextToken());
+        K = Integer.parseInt(st.nextToken());
+        arr = new int[100_001];
 
-        // bfs로 탐색 -> 최단 경로를 찾는 것이기에 답을 찾아도 최단인지 알 수 없는 dfs보다 적합
-        arr[N] = 1;
-        bfs(N);
+        bfs();
 
-        bw.write(String.valueOf(arr[K] - 1) + "\n");
-        bw.flush();
-        bw.close();
-        br.close();
+        System.out.println(arr[K]);
     }
-    public static void bfs(int curIndex) {
+    public static void bfs() {
         Queue<Integer> q = new LinkedList<>();
 
-        q.add(curIndex);
+        q.add(N);
         while (!q.isEmpty()) {
-            int temp = q.remove();
-            // 답이면 리턴
-            if (temp == K)
-                return;
-            // 범위 확인하고 방문하지 않은 곳이라면 arr 해당 인덱스에 현재 값 + 1을 저장하고 해당 인덱스를 큐에 추가
-            if (temp - 1 >= 0 && arr[temp - 1] == 0) {
-                arr[temp - 1] = arr[temp] + 1;
-                q.add(temp - 1);
+            int remove = q.poll();
+
+            if (remove == K) return;
+            if (remove + 1 <= 100_000 && arr[remove + 1] == 0) {
+                arr[remove + 1] = arr[remove] + 1;
+                q.add(remove + 1);
             }
-            if (temp + 1 <= 100000 && arr[temp + 1] == 0) {
-                arr[temp + 1] = arr[temp] + 1;
-                q.add(temp + 1);
+            if (remove * 2 <= 100_000 && arr[remove * 2] == 0) {
+                arr[remove * 2] = arr[remove] + 1;
+                q.add(remove * 2);
             }
-            if (temp * 2 <= 100000 && arr[temp * 2] == 0) {
-                arr[temp * 2] = arr[temp] + 1;
-                q.add(temp * 2);
+            if (remove - 1 >= 0 && arr[remove - 1] == 0) {
+                arr[remove - 1] = arr[remove] + 1;
+                q.add(remove - 1);
             }
         }
     }
