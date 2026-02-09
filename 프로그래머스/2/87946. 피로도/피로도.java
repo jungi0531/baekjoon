@@ -1,29 +1,29 @@
 class Solution {
     static int answer;
+    static boolean[] visited;
     
     public int solution(int k, int[][] dungeons) {
-        // 던전을 탐험하기 위해 어떻게 하냐는 것인데..
-        // 내가 봤을 때 다 해보는 수밖에 없다.
-        // 어떻게 다 해보느냐,
-        boolean[] visited = new boolean[dungeons.length];
+        answer = 0;
+        visited = new boolean[dungeons.length];
         
-        search(dungeons, visited, 0, k);
-        
-        return answer;
-    }
-    public void search(int[][] dungeons, boolean[] visited, int level, int cur) {
-        
-        for (int i = 0; i < visited.length; i++) {
-            if (!visited[i] && cur >= dungeons[i][0]) {
+        for (int i = 0; i < dungeons.length; i++) {
+            if (dungeons[i][0] <= k) {
                 visited[i] = true;
-                search(dungeons, visited, level + 1, cur - dungeons[i][1]);
+                backtracking(k - dungeons[i][1], dungeons, 1);
                 visited[i] = false;
             }
         }
         
-        if (level > answer) {
-            System.out.println("level: " + level + " " + "cur: " + cur);
-            answer = level;
+        return answer;
+    }
+    public void backtracking(int k, int[][] dungeons, int count) {
+        for (int i = 0; i < dungeons.length; i++) {
+            if (!visited[i] && dungeons[i][0] <= k) {
+                visited[i] = true;
+                backtracking(k - dungeons[i][1], dungeons, count + 1);
+                visited[i] = false;
+            }
         }
+        answer = Math.max(answer, count);
     }
 }
