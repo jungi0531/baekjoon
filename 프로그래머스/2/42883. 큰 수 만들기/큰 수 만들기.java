@@ -1,16 +1,25 @@
+import java.util.*;
+
 class Solution {
     public String solution(String number, int k) {
-        StringBuilder sb = new StringBuilder("");
+        Stack<Integer> stack = new Stack<>();
         
-        int len = number.length() - k;
         for (int i = 0; i < number.length(); i++) {
-            while (sb.length() > 0 && sb.charAt(sb.length() - 1) < number.charAt(i) && k > 0) {
-                sb.deleteCharAt(sb.length() - 1);
+            while (k > 0 && !stack.isEmpty() && stack.peek() < number.charAt(i) - '0') {
+                stack.pop();
                 k--;
             }
-            sb.append(number.charAt(i));
+            stack.push(number.charAt(i) - '0');
+        }
+        while (k > 0) {
+            stack.pop();
+            k--;
+        }
+        StringBuilder sb = new StringBuilder("");
+        while (!stack.isEmpty()) {
+            sb.append(stack.pop());
         }
         
-        return sb.substring(0, len);
+        return sb.reverse().toString();
     }
 }
