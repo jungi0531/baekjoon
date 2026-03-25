@@ -2,34 +2,37 @@ import java.util.*;
 
 class Solution {
     public int solution(int bridge_length, int weight, int[] truck_weights) {
+        // 다리 큐에 있는 트럭의 총 합이 weight 보다 작아야 함
+        // 또한 트럭의 개수가 다리 길이보다 넘지 못 함
+        Queue<int[]> bridge = new LinkedList<>();
+        int sum = 0;
         int time = 0;
         int i = 0;
-        int count = 0;
-        int sum = 0;
-        Queue<Integer> q = new LinkedList<>();
-        
-        // 큐를 만들고 넣긴 넣는데
-        // 다리의 길이를 고려해야함 머 몇 초 뒤에 빼고 그런게 되나?
-        // 초당 하나를 넣고 / 트럭을 넣기 전 다리의 길이만큼 빈 값을 넣기?
-        // q.size() 가 bridge_length가 될만큼 
-        while (count < truck_weights.length) {
-            // q.size() 가 bridge.length가 되게 계속 채워 넣어
-            while (q.size() < bridge_length - 1) {
-                q.add(0);
+        while (i < truck_weights.length) {
+            time++;
+            
+            // 추가하면서 동시에 빠질 수도 있음
+            // 언제 빠지는데? 현재 시간 - 들온 시간이 다리 길이일 때 <- 들온 시간을 알아야 함
+            // 빠지면서 들어가니까 빠지는 거 먼저
+            // 다리에 있던 시간이 다리 길이보다 커야함
+            if (!bridge.isEmpty() && time - bridge.peek()[0] >= bridge_length) {
+                int[] remove = bridge.poll();
+                sum -= remove[1];
+                time = remove[0] + bridge_length;
             }
-            if (i < truck_weights.length && weight >= sum + truck_weights[i]) {
-                // 넣을 수 있을 땐 넣기
-                q.add(truck_weights[i]);
+            
+            // 빠지고 나서 들어가기.
+            if (sum + truck_weights[i] <= weight) {
+                // 추가해도 견딜 수 있는 무게면
+                bridge.add(new int[]{time, truck_weights[i]});
                 sum += truck_weights[i];
                 i++;
             }
-            if (q.peek() > 0) count++;
-            sum -= q.poll();
-            time++;
-            if (count >= truck_weights.length) {
-                time++;
-                break;
-            }
+        }
+        // 트럭이 다 다리 안에 있으면 마지막에 나온 트럭의 time + 다리 길이
+        while (!bridge.isEmpty()) {
+            int[] remove = bridge.poll();
+            time = remove[0] + bridge_length;
         }
         
         return time;
