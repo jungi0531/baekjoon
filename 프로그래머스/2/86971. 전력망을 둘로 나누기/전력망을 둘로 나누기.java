@@ -1,52 +1,46 @@
 import java.util.*;
 
 class Solution {
-    static ArrayList<Integer>[] graph;
+    static ArrayList<Integer>[] arr;
+    static boolean[] visited;
+    static int count;
+    static int min;
+    
     public int solution(int n, int[][] wires) {
-        // 그냥 간선 하나 끊고 노드 하나 잡고 끝까지 count하고 n과 비교
-        int answer = Integer.MAX_VALUE;
+        // 최대한 비슷하게 나눠지는 곳 찾기
+        // 할 때마다 하나씩 빼고 만들어서 절대값이 가장 작은 값을 저장해놓기
+        arr = new ArrayList[n + 1];
+        min = Integer.MAX_VALUE;
         
         for (int i = 0; i < wires.length; i++) {
-            graph = new ArrayList[n + 1];
+            count = 0;
+            visited = new boolean[n + 1];
+            // i 빼고 만들고
             for (int ii = 0; ii <= n; ii++) {
-                graph[ii] = new ArrayList<>();
+                arr[ii] = new ArrayList<>();
             }
-            
             for (int ii = 0; ii < wires.length; ii++) {
                 if (i == ii) continue;
-                
-                int a = wires[ii][0];
-                int b = wires[ii][1];
-                graph[a].add(b);
-                graph[b].add(a);
+                arr[wires[ii][0]].add(wires[ii][1]);
+                arr[wires[ii][1]].add(wires[ii][0]);
             }
-            int count = bfs(n);
-            
-            answer = Math.min(answer, Math.abs(Math.abs(n - count) - count));
+            // 돌면서 두 뭉티의 차이 세기.
+            dfs(1);
+            //System.out.println(count);
+            min = Math.min(min, Math.abs((n - count) - count));
         }
         
-        return answer;
+        return min;
     }
-    public int bfs(int n) {
-        int count = 0; // 노드 1 넣고 노드 1과 연결된 노드 개수 세기
-        Queue<Integer> q = new LinkedList<>();
-        boolean[] visited = new boolean[n + 1];
-        
-        q.add(1);
-        visited[1] = true;
+    public void dfs(int cur) {
+        visited[cur] = true;
         count++;
-        while (!q.isEmpty()) {
-            int remove = q.poll();
-            for (int i = 0; i < graph[remove].size(); i++) {
-                int temp = graph[remove].get(i);
-                if (!visited[temp]) {
-                    visited[temp] = true;
-                    count++;
-                    q.add(temp);
-                }
+        
+        for (int i = 0; i < arr[cur].size(); i++) {
+            int num = arr[cur].get(i);
+            if (!visited[num]) {
+                dfs(num);
             }
         }
-        
-        return count;
     }
 }
