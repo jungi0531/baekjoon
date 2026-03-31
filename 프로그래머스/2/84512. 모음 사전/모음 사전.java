@@ -1,23 +1,26 @@
-import java.util.*;
-
 class Solution {
-    static List<String> list;
-    static String[] order = {"A", "E", "I", "O", "U"};
+    
+    static String input;
+    static String[] alpha = {"A", "E", "I", "O", "U"};
+    static int count;
+    static int answer;
     
     public int solution(String word) {
-        list = new ArrayList<>();
+        input = word;
+        dfs("");
         
-        make("");
-        
-        return list.indexOf(word);
+        return answer;
     }
-    public void make(String s) {
-        list.add(s);
-        
-        if (s.length() == 5) return;
+    public void dfs(String word) {
+        if (word.equals(input)) {
+            answer = count;
+            return;
+        }
+        count++;
+        if (word.length() >= 5) return;
         
         for (int i = 0; i < 5; i++) {
-            make(s + order[i]);
+            dfs(word + alpha[i]);
         }
     }
 }
