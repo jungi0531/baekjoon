@@ -1,18 +1,15 @@
-import java.util.Scanner;
+import java.io.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int result = 0;
-        int n = scanner.nextInt();
-        String input = scanner.next();
-
-        for (int i = 0; i < n; i++) {
-            result += input.charAt(i) - '0';
+        int sum = 0;
+        int N = Integer.parseInt(br.readLine());
+        String input = br.readLine();
+        for (int i = 0; i < input.length(); i++) {
+            sum += input.charAt(i) - '0';
         }
-
-        System.out.println(result);
-        scanner.close();
+        System.out.println(sum);
     }
 }
