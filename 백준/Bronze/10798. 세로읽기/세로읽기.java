@@ -1,25 +1,25 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String[] input = new String[5];
+        StringBuilder sb = new StringBuilder();
 
-        try {
-            for (int i = 0; i < 5; i++) {
-                input[i] = br.readLine();
+        char[][] input = new char[5][15];
+        for (int i = 0; i < 5; i++) {
+            String temp = br.readLine();
+            for (int ii = 0; ii < temp.length(); ii++) {
+                input[i][ii] = temp.charAt(ii);
             }
-            for (int i = 0; i < 15; i++) {
-                for (int ii = 0; ii < 5; ii++) {
-                    if (input[ii].length() > i) {
-                        System.out.print(input[ii].charAt(i));
-                    }
-                }
-            }
-        } catch(IOException e) {
-            e.printStackTrace();
         }
+        //
+        for (int i = 0; i < 15; i++) {
+            for (int ii = 0; ii < 5; ii++) {
+                char cur = input[ii][i];
+                if (Character.isLetterOrDigit(cur))
+                    sb.append(cur);
+            }
+        }
+        System.out.println(sb);
     }
 }
