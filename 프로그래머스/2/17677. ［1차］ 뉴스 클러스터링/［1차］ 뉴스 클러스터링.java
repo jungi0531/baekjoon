@@ -2,46 +2,46 @@ import java.util.*;
 
 class Solution {
     public int solution(String str1, String str2) {
-        // 각각 해시맵을 만들어서 넣고
-        // 합집합 해시맵은 max 값 저장
-        // 교집합 해시맵은 min 값 저장
-        HashMap<String, Integer> hash1 = new HashMap<>();
-        HashMap<String, Integer> hash2 = new HashMap<>();
+        // 해시를 활용해야할 듯 두 글자씩 끊어서 자카드 검사를 진행이라
+        // 일단 두 글자씩 자르는데 모두 문자여야 함
+        // 교집합은 해시셋으로 하고
+        // 합집합은
+        // 아니다 걍 해시맵에다가 해당 자카다의 개수까지 같이 저장하면 될 듯
+        HashMap<String, Integer> map1 = new HashMap<>();
+        HashMap<String, Integer> map2 = new HashMap<>();
         for (int i = 0; i < str1.length() - 1; i++) {
             String temp = str1.substring(i, i + 2).toUpperCase();
-            // 영어만 들어있지 않으면 버려야 함
-            if (('A' <= temp.charAt(0) && temp.charAt(0) <= 'Z') &&
-                ('A' <= temp.charAt(1) && temp.charAt(1) <= 'Z')) {
-                hash1.put(temp, hash1.getOrDefault(temp, 0) + 1);
-            }
+            if (!(Character.isLetter(temp.charAt(0)) && Character.isLetter(temp.charAt(1)))) continue;
+            map1.put(temp, map1.getOrDefault(temp, 0) + 1);
         }
         for (int i = 0; i < str2.length() - 1; i++) {
             String temp = str2.substring(i, i + 2).toUpperCase();
-            if (('A' <= temp.charAt(0) && temp.charAt(0) <= 'Z') &&
-                ('A' <= temp.charAt(1) && temp.charAt(1) <= 'Z')) {
-                hash2.put(temp, hash2.getOrDefault(temp, 0) + 1);
-            }
+            if (!(Character.isLetter(temp.charAt(0)) && Character.isLetter(temp.charAt(1)))) continue;
+            map2.put(temp, map2.getOrDefault(temp, 0) + 1);
         }
-        // 둘다 공집합인 경우
-        if (hash1.size() == 0 && hash2.size() == 0) return 65536;
-        
-        // 교집합 구하고 합쳐서 합집합 구하기
-        double union = 0;
-        double inter = 0;
-        for (String temp : hash1.keySet()) {
-            if (hash2.containsKey(temp)) {
-                union += Math.max(hash1.get(temp), hash2.get(temp));
-                inter += Math.min(hash1.get(temp), hash2.get(temp));
+        if (map1.size() == 0 && map2.size() == 0) return 65536;
+        int inter = 0;
+        int union = 0;
+        for (String temp : map1.keySet()) {
+            if (map2.containsKey(temp)) {
+                // 둘 다 있으면 max 값이 합집합 min 값이 교집합
+                inter += Math.min(map1.get(temp), map2.get(temp));
+                union += Math.max(map1.get(temp), map2.get(temp));
             } else {
-                union += hash1.get(temp);
+                // 얘만 있는 거면 합집합에 걍 추가
+                union += map1.get(temp);
             }
         }
-        for (String temp : hash2.keySet()) {
-            if (!hash1.containsKey(temp)) {
-                union += hash2.get(temp);
+        // 이제 map2에만 있는 거 합집합에 추가
+        for (String temp : map2.keySet()) {
+            if (!map1.containsKey(temp)) {
+                union += map2.get(temp);
             }
         }
+        //System.out.println(inter + " " + union);
         
-        return (int)(inter / union * 65536);
+        int answer = 65536 * inter / union;
+        
+        return answer;
     }
 }
