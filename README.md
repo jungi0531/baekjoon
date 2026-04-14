@@ -21,5 +21,10 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0605-can-place-flowers](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0605-can-place-flowers/) | Easy |
 | [1431-kids-with-the-greatest-number-of-candies](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1431-kids-with-the-greatest-number-of-candies/) | Easy |
+## Greedy
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0605-can-place-flowers](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0605-can-place-flowers/) | Easy |
 <!---LeetCode Topics End-->
