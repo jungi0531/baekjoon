@@ -11,6 +11,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0151-reverse-words-in-a-string](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0151-reverse-words-in-a-string/) | Medium |
 | [0283-move-zeroes](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0283-move-zeroes/) | Easy |
 | [0345-reverse-vowels-of-a-string](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0345-reverse-vowels-of-a-string/) | Easy |
+| [0392-is-subsequence](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0392-is-subsequence/) | Easy |
 | [0443-string-compression](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0443-string-compression/) | Medium |
 | [1768-merge-strings-alternately](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1768-merge-strings-alternately/) | Easy |
 ## String
@@ -18,6 +19,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | ------- | ------- |
 | [0151-reverse-words-in-a-string](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0151-reverse-words-in-a-string/) | Medium |
 | [0345-reverse-vowels-of-a-string](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0345-reverse-vowels-of-a-string/) | Easy |
+| [0392-is-subsequence](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0392-is-subsequence/) | Easy |
 | [0443-string-compression](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0443-string-compression/) | Medium |
 | [1071-greatest-common-divisor-of-strings](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1071-greatest-common-divisor-of-strings/) | Easy |
 | [1768-merge-strings-alternately](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1768-merge-strings-alternately/) | Easy |
@@ -42,4 +44,8 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0238-product-of-array-except-self](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0238-product-of-array-except-self/) | Medium |
+## Dynamic Programming
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0392-is-subsequence](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0392-is-subsequence/) | Easy |
 <!---LeetCode Topics End-->
