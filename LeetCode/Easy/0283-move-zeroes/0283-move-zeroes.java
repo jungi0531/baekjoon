@@ -5,11 +5,10 @@ class Solution {
         */
 
         for (int i = 1; i < nums.length; i++) {
-            int ii = i;
-            while (ii - 1 >= 0 && nums[ii - 1] == 0) {
-                swap(nums, ii, ii - 1);
-                ii--;
-            }
+            if (nums[i] == 0) continue;
+            int ii = i - 1;
+            while (ii - 1 >= 0 && nums[ii - 1] == 0) ii--;
+            if (nums[ii] == 0) swap(nums, i, ii);
         }
     }
     public void swap(int[] nums, int a, int b) {
