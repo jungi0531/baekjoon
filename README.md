@@ -35,6 +35,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0334-increasing-triplet-subsequence](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0334-increasing-triplet-subsequence/) | Medium |
 | [0605-can-place-flowers](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0605-can-place-flowers/) | Easy |
 | [1431-kids-with-the-greatest-number-of-candies](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1431-kids-with-the-greatest-number-of-candies/) | Easy |
+| [2215-find-the-difference-of-two-arrays](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/2215-find-the-difference-of-two-arrays/) | Easy |
 ## Greedy
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -48,4 +49,8 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0392-is-subsequence](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0392-is-subsequence/) | Easy |
+## Hash Table
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2215-find-the-difference-of-two-arrays](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/2215-find-the-difference-of-two-arrays/) | Easy |
 <!---LeetCode Topics End-->
