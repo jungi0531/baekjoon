@@ -2,25 +2,24 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int[] prices) {
-        // 스택을 활용해서 스택에 계속 넣다가? 낮아지면 나온 숫자와 같아질 때까지 숫자 빼기
-        // 스택의 첫 값은 인덱스, 두 번째 값은 값
-        Stack<int[]> stack = new Stack<>();
-        int[] answer = new int[prices.length];
+        /**
+        각 인덱스의 수들이 언제까지 안 떨어졌는지 기록
+        스택에 넣고 스택에 있는 것보다 작은 게 나오면 스택에 있는 거보다 큰 게 나올 때까지 빼면서 기록
+        */
+        Stack<Integer> stack = new Stack<>();
+        int[] result = new int[prices.length];
         
         for (int i = 0; i < prices.length; i++) {
-            // 스택에 들어있는 값보다 현재 값이 작으면 떨어진 거라서
-            // 스택에 들어있는 값과 같거나 클 때까지 빼기
-            while (!stack.isEmpty() && stack.peek()[1] > prices[i]) {
-                int[] remove = stack.pop();
-                answer[remove[0]] = i - remove[0];
+            while (!stack.isEmpty() && prices[stack.peek()] > prices[i]) {
+                int remove = stack.pop();
+                result[remove] = i - remove;
             }
-            stack.push(new int[]{i, prices[i]});
+            stack.push(i);
         }
         while (!stack.isEmpty()) {
-            int[] remove = stack.pop();
-            answer[remove[0]] = (prices.length - 1) - remove[0];
+            int remove = stack.pop();
+            result[remove] = prices.length - remove - 1;
         }
-        
-        return answer;
+        return result;
     }
 }
