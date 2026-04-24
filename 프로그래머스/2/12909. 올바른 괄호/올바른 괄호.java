@@ -1,22 +1,18 @@
+import java.util.*;
+
 class Solution {
     boolean solution(String s) {
-        boolean answer = true;
-
-        int count = 0;
+        Stack<Integer> stack = new Stack<>();
         
         for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '(') 
-                count++;
-            else 
-                count--;
-            if (count < 0) answer = false;
-                
+            if (s.charAt(i) == '(') stack.push(0);
+            else {
+                if (stack.isEmpty()) return false;
+                stack.pop();
+            }
         }
-        if (count != 0) answer = false;
         
-        // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-        System.out.println("Hello Java");
-
-        return answer;
+        if (!stack.isEmpty()) return false;
+        return true;
     }
 }
