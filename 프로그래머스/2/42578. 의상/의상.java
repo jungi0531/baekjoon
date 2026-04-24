@@ -2,19 +2,19 @@ import java.util.*;
 
 class Solution {
     public int solution(String[][] clothes) {
-        // 각 해시에 넣고, 각 해시의 size를 곱한 다음 - 1
-        int answer = 1;
-        HashMap<String, Integer> hash = new HashMap<>();
+        /**
+        걍 확통 문제
+        */
+        HashMap<String, Integer> map = new HashMap<>();
         
-        for (String[] temp : clothes) {
-            hash.put(temp[1], hash.getOrDefault(temp[1], 0) + 1);
+        for (int i = 0; i < clothes.length; i++) {
+            map.put(clothes[i][1], map.getOrDefault(clothes[i][1], 0) + 1);
         }
         
-        for (String temp : hash.keySet()) {
-            // System.out.println(temp + " " + hash.get(temp));
-            answer *= hash.get(temp) + 1;
+        int result = 1;
+        for (String temp : map.keySet()) {
+            result *= map.get(temp) + 1;
         }
-        
-        return answer - 1;
+        return result - 1;
     }
 }
