@@ -2,32 +2,28 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int[] progresses, int[] speeds) {
-        // 우선 한바퀴 돌 때마다 추가해서 저장해놓고 100이 넘어가면 배포하는 건데, 앞에 100이 안 되면 배포가 안 된다
-        // 그 순간에 100 넘은 숫자들 개수를 스피드에 넣고 count++;
-        // 한 바퀴 돌 떄마다 100 다 뛰어 넘고 오기
-        int deployCount = 0;
-        int deployed = 0;
-        ArrayList<Integer> arr = new ArrayList<>();
+        /**
+        하루마다 speeds만큼 진적되고 100되면 끝인데? 앞에가 아직 100이 안 됐으면 못 뺀다.
+        */
+        int done = 0;
+        Queue<Integer> q = new LinkedList<>();
         
-        while (deployed < progresses.length) {
+        while (done < progresses.length) {
             for (int i = 0; i < progresses.length; i++) {
                 progresses[i] += speeds[i];
-                
             }
-            int cur = 0;
-            while (deployed < progresses.length &&
-                   progresses[deployed] >= 100) {
-                deployed++;
-                cur++;
+            int count = 0;
+            while (done < progresses.length && progresses[done] >= 100) {
+                done++;
+                count++;
             }
-            if (cur != 0) arr.add(cur);
+            if (count != 0) q.add(count);
         }
-        
-        int[] answer = new int[arr.size()];
-        for (int i = 0; i < arr.size(); i++) {
-            answer[i] = arr.get(i);
+        //
+        int[] answer = new int[q.size()];
+        for (int i = 0; i < answer.length; i++) {
+            answer[i] = q.poll();
         }
-        
         return answer;
     }
 }
