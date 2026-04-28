@@ -14,6 +14,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0345-reverse-vowels-of-a-string](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0345-reverse-vowels-of-a-string/) | Easy |
 | [0392-is-subsequence](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0392-is-subsequence/) | Easy |
 | [0443-string-compression](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0443-string-compression/) | Medium |
+| [1679-max-number-of-k-sum-pairs](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1679-max-number-of-k-sum-pairs/) | Medium |
 | [1768-merge-strings-alternately](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1768-merge-strings-alternately/) | Easy |
 ## String
 | Problem Name | Difficulty |
@@ -38,6 +39,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0605-can-place-flowers](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0605-can-place-flowers/) | Easy |
 | [1207-unique-number-of-occurrences](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1207-unique-number-of-occurrences/) | Easy |
 | [1431-kids-with-the-greatest-number-of-candies](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1431-kids-with-the-greatest-number-of-candies/) | Easy |
+| [1679-max-number-of-k-sum-pairs](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1679-max-number-of-k-sum-pairs/) | Medium |
 | [2215-find-the-difference-of-two-arrays](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/2215-find-the-difference-of-two-arrays/) | Easy |
 ## Greedy
 | Problem Name | Difficulty |
@@ -57,6 +59,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1207-unique-number-of-occurrences](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1207-unique-number-of-occurrences/) | Easy |
+| [1679-max-number-of-k-sum-pairs](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1679-max-number-of-k-sum-pairs/) | Medium |
 | [2215-find-the-difference-of-two-arrays](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/2215-find-the-difference-of-two-arrays/) | Easy |
 ## Design
 | Problem Name | Difficulty |
@@ -78,4 +81,8 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0206-reverse-linked-list](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0206-reverse-linked-list/) | Easy |
+## Sorting
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1679-max-number-of-k-sum-pairs](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1679-max-number-of-k-sum-pairs/) | Medium |
 <!---LeetCode Topics End-->
