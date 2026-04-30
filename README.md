@@ -24,6 +24,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0392-is-subsequence](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0392-is-subsequence/) | Easy |
 | [0443-string-compression](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0443-string-compression/) | Medium |
 | [1071-greatest-common-divisor-of-strings](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1071-greatest-common-divisor-of-strings/) | Easy |
+| [1456-maximum-number-of-vowels-in-a-substring-of-given-length](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1456-maximum-number-of-vowels-in-a-substring-of-given-length/) | Medium |
 | [1768-merge-strings-alternately](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1768-merge-strings-alternately/) | Easy |
 ## Math
 | Problem Name | Difficulty |
@@ -90,4 +91,5 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0643-maximum-average-subarray-i](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0643-maximum-average-subarray-i/) | Easy |
+| [1456-maximum-number-of-vowels-in-a-substring-of-given-length](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1456-maximum-number-of-vowels-in-a-substring-of-given-length/) | Medium |
 <!---LeetCode Topics End-->
