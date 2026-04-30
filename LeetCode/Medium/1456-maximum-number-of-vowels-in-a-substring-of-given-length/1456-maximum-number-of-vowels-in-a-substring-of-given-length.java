@@ -18,7 +18,7 @@ class Solution {
         }
         max = Math.max(max, count);
 
-        for (int i = k; i < s.length(); i++) {
+        while (right < s.length()) {
             // 왼쪽 땡기기
             if (vowels.contains(String.valueOf(s.charAt(left)))) count--;
             left++;
@@ -26,9 +26,10 @@ class Solution {
             // 오른쪽 땡기기
             right++;
             if (right >= s.length()) break;
-            if (vowels.contains(String.valueOf(s.charAt(right)))) count++;
-
-            max = Math.max(max, count);
+            if (vowels.contains(String.valueOf(s.charAt(right)))) {
+                count++;
+                max = Math.max(max, count);
+            }
         }
 
         return max;
