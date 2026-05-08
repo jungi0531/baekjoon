@@ -17,7 +17,7 @@ class Solution {
             rightSum -=nums[index];
         }
 
-        if (index >= nums.length - 1 && leftSum != rightSum) return -1;
+        if (index >= nums.length && leftSum != rightSum) return -1;
         return index;
     }
 }
