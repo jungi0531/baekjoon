@@ -39,6 +39,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0334-increasing-triplet-subsequence](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0334-increasing-triplet-subsequence/) | Medium |
 | [0605-can-place-flowers](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0605-can-place-flowers/) | Easy |
 | [0643-maximum-average-subarray-i](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0643-maximum-average-subarray-i/) | Easy |
+| [0724-find-pivot-index](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0724-find-pivot-index/) | Easy |
 | [1004-max-consecutive-ones-iii](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1004-max-consecutive-ones-iii/) | Medium |
 | [1207-unique-number-of-occurrences](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1207-unique-number-of-occurrences/) | Easy |
 | [1431-kids-with-the-greatest-number-of-candies](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1431-kids-with-the-greatest-number-of-candies/) | Easy |
@@ -56,6 +57,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0238-product-of-array-except-self](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0238-product-of-array-except-self/) | Medium |
+| [0724-find-pivot-index](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0724-find-pivot-index/) | Easy |
 | [1004-max-consecutive-ones-iii](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1004-max-consecutive-ones-iii/) | Medium |
 | [1732-find-the-highest-altitude](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1732-find-the-highest-altitude/) | Easy |
 ## Dynamic Programming
