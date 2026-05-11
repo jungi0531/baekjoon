@@ -25,6 +25,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0443-string-compression](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0443-string-compression/) | Medium |
 | [1071-greatest-common-divisor-of-strings](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1071-greatest-common-divisor-of-strings/) | Easy |
 | [1456-maximum-number-of-vowels-in-a-substring-of-given-length](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1456-maximum-number-of-vowels-in-a-substring-of-given-length/) | Medium |
+| [1657-determine-if-two-strings-are-close](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1657-determine-if-two-strings-are-close/) | Medium |
 | [1768-merge-strings-alternately](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1768-merge-strings-alternately/) | Easy |
 ## Math
 | Problem Name | Difficulty |
@@ -69,6 +70,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1207-unique-number-of-occurrences](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1207-unique-number-of-occurrences/) | Easy |
+| [1657-determine-if-two-strings-are-close](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1657-determine-if-two-strings-are-close/) | Medium |
 | [1679-max-number-of-k-sum-pairs](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1679-max-number-of-k-sum-pairs/) | Medium |
 | [2215-find-the-difference-of-two-arrays](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/2215-find-the-difference-of-two-arrays/) | Easy |
 ## Design
@@ -94,6 +96,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Sorting
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1657-determine-if-two-strings-are-close](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1657-determine-if-two-strings-are-close/) | Medium |
 | [1679-max-number-of-k-sum-pairs](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1679-max-number-of-k-sum-pairs/) | Medium |
 ## Sliding Window
 | Problem Name | Difficulty |
@@ -106,4 +109,8 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1004-max-consecutive-ones-iii](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1004-max-consecutive-ones-iii/) | Medium |
+## Counting
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1657-determine-if-two-strings-are-close](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1657-determine-if-two-strings-are-close/) | Medium |
 <!---LeetCode Topics End-->
