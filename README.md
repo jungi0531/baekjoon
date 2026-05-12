@@ -48,6 +48,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [1679-max-number-of-k-sum-pairs](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1679-max-number-of-k-sum-pairs/) | Medium |
 | [1732-find-the-highest-altitude](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1732-find-the-highest-altitude/) | Easy |
 | [2215-find-the-difference-of-two-arrays](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/2215-find-the-difference-of-two-arrays/) | Easy |
+| [2352-equal-row-and-column-pairs](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/2352-equal-row-and-column-pairs/) | Medium |
 ## Greedy
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -73,6 +74,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [1657-determine-if-two-strings-are-close](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1657-determine-if-two-strings-are-close/) | Medium |
 | [1679-max-number-of-k-sum-pairs](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1679-max-number-of-k-sum-pairs/) | Medium |
 | [2215-find-the-difference-of-two-arrays](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/2215-find-the-difference-of-two-arrays/) | Easy |
+| [2352-equal-row-and-column-pairs](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/2352-equal-row-and-column-pairs/) | Medium |
 ## Design
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -113,4 +115,12 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1657-determine-if-two-strings-are-close](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1657-determine-if-two-strings-are-close/) | Medium |
+## Matrix
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2352-equal-row-and-column-pairs](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/2352-equal-row-and-column-pairs/) | Medium |
+## Simulation
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2352-equal-row-and-column-pairs](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/2352-equal-row-and-column-pairs/) | Medium |
 <!---LeetCode Topics End-->
