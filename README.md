@@ -22,6 +22,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0151-reverse-words-in-a-string](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0151-reverse-words-in-a-string/) | Medium |
 | [0345-reverse-vowels-of-a-string](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0345-reverse-vowels-of-a-string/) | Easy |
 | [0392-is-subsequence](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0392-is-subsequence/) | Easy |
+| [0394-decode-string](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0394-decode-string/) | Medium |
 | [0443-string-compression](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0443-string-compression/) | Medium |
 | [1071-greatest-common-divisor-of-strings](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1071-greatest-common-divisor-of-strings/) | Easy |
 | [1456-maximum-number-of-vowels-in-a-substring-of-given-length](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1456-maximum-number-of-vowels-in-a-substring-of-given-length/) | Medium |
@@ -97,6 +98,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0206-reverse-linked-list](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0206-reverse-linked-list/) | Easy |
+| [0394-decode-string](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0394-decode-string/) | Medium |
 ## Sorting
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -130,6 +132,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Stack
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0394-decode-string](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0394-decode-string/) | Medium |
 | [0735-asteroid-collision](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0735-asteroid-collision/) | Medium |
 | [2390-removing-stars-from-a-string](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/2390-removing-stars-from-a-string/) | Medium |
 <!---LeetCode Topics End-->
