@@ -18,6 +18,7 @@ class Solution {
             cur = cur.next;
             count++;
         }
+        if (count == 1) return null;
 
         cur = head;
         ListNode prev = null;
@@ -26,7 +27,6 @@ class Solution {
             prev = cur;
             cur = prev.next;
         }
-        if (prev == null) return null;
         
         prev.next = cur.next;
 
