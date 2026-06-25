@@ -11,24 +11,19 @@
 class Solution {
     public ListNode deleteMiddle(ListNode head) {
         // 일단 총 개수를 먼저 세고 그 수의 반만큼 가서 지우기
-        int count = 0;
+        if (head.next == null) return null;
 
-        ListNode cur = head;
-        while (cur != null) {
-            cur = cur.next;
-            count++;
-        }
-        if (count == 1) return null;
-
-        cur = head;
         ListNode prev = null;
+        ListNode slow = head;
+        ListNode fast = head;
 
-        for (int i = 0; i < count / 2; i++) {
-            prev = cur;
-            cur = prev.next;
+        while (fast != null && fast.next != null) {
+            prev = slow;
+            slow = slow.next;
+
+            fast = fast.next.next;
         }
-        
-        prev.next = cur.next;
+        prev.next = slow.next;
 
         return head;
     }
