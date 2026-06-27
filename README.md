@@ -98,6 +98,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0206-reverse-linked-list](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0206-reverse-linked-list/) | Easy |
+| [0328-odd-even-linked-list](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0328-odd-even-linked-list/) | Medium |
 | [2095-delete-the-middle-node-of-a-linked-list](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/2095-delete-the-middle-node-of-a-linked-list/) | Medium |
 ## Recursion
 | Problem Name | Difficulty |
