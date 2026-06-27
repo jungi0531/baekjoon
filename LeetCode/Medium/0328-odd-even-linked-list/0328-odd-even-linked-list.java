@@ -14,27 +14,19 @@ class Solution {
         // 첫 번째 짝수 노드 위치 기억해놓고 다 바로 다음 거 가리키다가 홀수 번째 마지막 노드랑 합치기
         if (head == null || head.next == null) return head;
 
-        int count = 1;
-        ListNode prev = null;
-        ListNode cur = head;
-        ListNode next = cur.next;
+        ListNode odd = head;
+        ListNode even = head.next;
+        ListNode evenHead = even;
 
-        ListNode firstEven = next;
+        while (even != null && even.next != null) {
+            odd.next = even.next;
+            odd = odd.next;
 
-        while (cur != null && next != null) {
-            count++;
-            prev = cur;
-            cur.next = next.next;
-            cur = next;
-            next = next.next;
+            even.next = odd.next;
+            even = even.next;
         }
 
-        System.out.println(count);
-        if (count % 2 == 0) {
-            prev.next = firstEven;
-        } else {
-            cur.next = firstEven;
-        }
+        odd.next = evenHead;
 
         return head;
     }
