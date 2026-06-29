@@ -17,6 +17,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [1679-max-number-of-k-sum-pairs](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/1679-max-number-of-k-sum-pairs/) | Medium |
 | [1768-merge-strings-alternately](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/1768-merge-strings-alternately/) | Easy |
 | [2095-delete-the-middle-node-of-a-linked-list](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/2095-delete-the-middle-node-of-a-linked-list/) | Medium |
+| [2130-maximum-twin-sum-of-a-linked-list](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/2130-maximum-twin-sum-of-a-linked-list/) | Medium |
 ## String
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -100,6 +101,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0206-reverse-linked-list](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0206-reverse-linked-list/) | Easy |
 | [0328-odd-even-linked-list](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0328-odd-even-linked-list/) | Medium |
 | [2095-delete-the-middle-node-of-a-linked-list](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/2095-delete-the-middle-node-of-a-linked-list/) | Medium |
+| [2130-maximum-twin-sum-of-a-linked-list](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/2130-maximum-twin-sum-of-a-linked-list/) | Medium |
 ## Recursion
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -140,5 +142,6 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | ------- | ------- |
 | [0394-decode-string](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0394-decode-string/) | Medium |
 | [0735-asteroid-collision](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0735-asteroid-collision/) | Medium |
+| [2130-maximum-twin-sum-of-a-linked-list](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/2130-maximum-twin-sum-of-a-linked-list/) | Medium |
 | [2390-removing-stars-from-a-string](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/2390-removing-stars-from-a-string/) | Medium |
 <!---LeetCode Topics End-->
