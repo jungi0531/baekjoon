@@ -144,4 +144,20 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0735-asteroid-collision](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/0735-asteroid-collision/) | Medium |
 | [2130-maximum-twin-sum-of-a-linked-list](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/2130-maximum-twin-sum-of-a-linked-list/) | Medium |
 | [2390-removing-stars-from-a-string](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Medium/2390-removing-stars-from-a-string/) | Medium |
+## Tree
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0104-maximum-depth-of-binary-tree](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0104-maximum-depth-of-binary-tree/) | Easy |
+## Depth-First Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0104-maximum-depth-of-binary-tree](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0104-maximum-depth-of-binary-tree/) | Easy |
+## Breadth-First Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0104-maximum-depth-of-binary-tree](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0104-maximum-depth-of-binary-tree/) | Easy |
+## Binary Tree
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0104-maximum-depth-of-binary-tree](https://github.com/jungi0531/baekjoon/tree/main/LeetCode/Easy/0104-maximum-depth-of-binary-tree/) | Easy |
 <!---LeetCode Topics End-->
