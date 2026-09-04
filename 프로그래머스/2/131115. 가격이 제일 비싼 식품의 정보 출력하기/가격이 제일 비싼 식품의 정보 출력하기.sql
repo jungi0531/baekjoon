@@ -1,3 +1,4 @@
-select * from FOOD_PRODUCT
-order by PRICE desc
-limit 1
+SELECT *
+FROM FOOD_PRODUCT
+ORDER BY PRICE DESC
+LIMIT 1;
