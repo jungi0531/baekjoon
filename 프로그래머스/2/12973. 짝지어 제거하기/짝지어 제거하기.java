@@ -3,7 +3,8 @@ import java.util.*;
 class Solution
 {
     public int solution(String s)
-    {   
+    {
+        // 와 스택 쓰는 거 인정 ㅇㅇ
         Stack<Character> stack = new Stack<>();
         
         for (int i = 0; i < s.length(); i++) {
@@ -18,3 +19,4 @@ class Solution
         return 0;
     }
 }
+
