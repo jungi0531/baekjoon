@@ -1,17 +1,19 @@
 class Solution {
     public int solution(int n) {
-        int answer = n + 1;
+        // 다음  큰 숫자란: n과 이진 수로 했을 때 1 개수 같은 다음 큰 수
         
-        while (true) {
-            if (getOneNum(n) == getOneNum(answer)) return answer;
-            answer++;
+        for (int i = n + 1; i < 1_000_000; i++) {
+            if (countOne(n) == countOne(i)) return i;
         }
+        
+        return -1;
     }
-    public int getOneNum(int input) {
-        String binary = Integer.toBinaryString(input);
+    public int countOne(int n) {
         int count = 0;
-        for (int i = 0; i < binary.length(); i++) {
-            if (binary.charAt(i) == '1') count++;
+        
+        while (n > 0) {
+            if (n % 2 == 1) count++;
+            n /= 2;
         }
         
         return count;
